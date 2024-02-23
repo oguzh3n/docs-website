@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html data-theme="night" dir="ltr" lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonHosting - Docs</title>
+    <link rel="stylesheet" href="./main.css" src="./main.css"/>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <meta name="description" content="A cheap node.js, nginx and python hosting provider.">
+    <meta name="keywords" content="ücretsiz, hosting, nodejs, ücretsiz hosting, ucuz hosting, moonhosting, en iyi nodejs sağlayıcısı, moon hosting, kalite">
+    <meta name="author" content="Oguzh3n">
+    <meta name="theme-color" content="#040F1B">
+</head>
+<body class="p-7 bg-base-200">
+  <!-- Navbar kodları (oguzh3n tarafından kodlandı.) -->
+  <header class="navbar fixed top-0 right-0 left-0 bg-white/20 dark:bg-gray-950/20 backdrop-blur-md">
+   <div class="navbar-start">
+    <div class="dropdown z-40">
+     <label class="btn btn-ghost" tabindex="0">
+      <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+     </label>
+     <ul class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-60" tabindex="0">
+      <li>
+       <a class="" href="https://moonhosting.xyz/">
+        <span>
+         <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </span>
+        <span>
+         Yönetim Paneli
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="active" href="https://moonhosting.xyz/servers">
+        <span>
+         <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </span>
+        <span>
+         Sunucu Paneli
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="" href="https://discord.gg/ugu6jdquFp" href="stopwatch/">
+        <span>
+         <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </span>
+        <span>
+         Discord Sunucusu
+        </span>
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="dropdown z-40 sm:inline-block">
+     <label class="btn btn-ghost" tabindex="0">
+      <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+     </label>
+     <ul class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 flex-nowrap rounded-box w-48 max-h-48 overflow-y-scroll" tabindex="0">
+      <li>
+       <a class="" href="/en/">
+        English
+       </a>
+      </li>
+      <li>
+       <a class="active" href="/">
+        Türkçe
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="navbar-center">
+    <h1 class="font-light normal-case text-lg sm:text-2xl max-w-[66vw] sm:max-w-full truncate text-right">
+     Moon Hosting
+    </h1>
+   </div>
+   <div class="navbar-end">
+    <div class="hidden sm:hidden" id="fullscreen-container">
+     <button aria-label="Tam Ekran" class="btn btn-ghost hidden md:inline-flex" id="fullscreen">
+      <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+     </button>
+    </div>
+    <button aria-label="Karanlık mod" class="btn btn-ghost hidden" id="dark">
+     <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" stroke-linecap="round" stroke-linejoin="round">
+      </path>
+     </svg>
+    </button>
+    <!-- Açık/Kapalı tema kodları, işlev eklemedim. (oguzh3n tarafından kodlandı.) -->
+    <!--<button aria-label="Işık modu" class="btn btn-ghost" id="light">
+     <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" stroke-linecap="round" stroke-linejoin="round">
+      </path>
+     </svg>
+    </button>
+    <button aria-label="Ekranı karart" class="btn btn-ghost hidden md:inline-flex" id="dim">
+     <svg class="h-4 w-4 md:h-5 md:w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" stroke-linecap="round" stroke-linejoin="round">
+      </path>
+     </svg>
+    </button>-->
+    <!-- Açık/Kapalı tema butonları bitiş satırı. (oguzh3n tarafından kodlandı.) -->
+   </div>
+  </header>
+    <!-- Navbar kodları bitiş satırı (oguzh3n tarafından kodlandı.) -->
+    <!-- Ana sayfa üst bilgilendirme/tanıtım bölümü. (oguzh3n tarafından kodlandı.) -->
+  <div class="mt-32">
+    <h1 class="text-5xl font-black">
+      Moon
+      Hosting
+    </h1>
+    <span class="text-md font-light">
+      A cheap node.js, nginx and python hosting provider.
+    </span>
+  </div>
+  <div class="mt-3">
+    <button class="btn btn-primary w-full mt-3">
+      <a href="https://discord.gg/ugu6jdquFp">
+        Hemen Dene!
+      </a>
+    </button>
+  </div>
+  <!-- Ana sayfa üst bilgilendirme bitiş satırı. (oguzh3n tarafından kodlandı.) -->
+  
+  <!-- Dokümasyon(docs) kısmı. (oguzh3n tarafından kodlandı.) -->
+  <!-- Dokümasyon(Başlangıç: Sunucu Oluşturma) (oguzh3n tarafından kodlandı.) -->
+  <div class="mt-3">
+    <hr class="mb-3 mt-3 border border-gray-800"/>
+    <div class="mt-3">
+      <h1 class="text-3xl font-black">
+        Başlangıç: Sunucu Oluşturma
+      </h1>
+      <span class="text-md font-light">
+        Sunucu ve hesap oluşturma.
+      </span>
+      <div class="mt-3">
+        <span class="text-md font-light">
+          İlk önce
+          <a href="https://moonhosting.xyz/" class="hover:underline hover:text-white transition duration-300 text-blue-400">
+            yönetim paneline
+          </a>
+          erişin. Ardından önünüze açılan formda yer alan 'Yeni bir üyelik kaydedin' butonuna basarak kayıt sayfasına erişin. Sırasıyla; kullanıcı adınızı, e-postanızı, şifrenizi girin. Örnek:
+          <div class="mt-3 w-full rounded-md bg-base-100 p-3 font-mono text-sm">
+            [Kullanıcı Adınız]
+            <br>
+            [E-Postanız]
+            <br>
+            [Şifreniz]
+            <br>
+            [Yukarıda Yazdığınız Şifrenin Aynısı]
+          </div>
+          <br>
+          <span class="text-md font-light">
+            Örnek bir dolduruluş:
+            <div class="mt-3 w-full rounded-md bg-base-100 p-3 font-mono text-sm">
+              oguzhan
+              <br>
+              destek@moonhosting.xyz
+              <br>
+              12345678
+              <br>
+              12345678
+            </div>
+          </span>
+        </span>
+        <div class="mt-3">
+          <span class="text-md font-light">
+            Ardından
+            <a href="https://moonhosting.xyz/servers" class="hover:underline hover:text-white transition duration-300 text-blue-400">
+              sunucular
+            </a>
+            sayfasına gidip üstte bulunan '+ Sunucu Oluştur' butonuna tıklayın. Açılan formda sırasıyla; sunucu ismini, sunucu yazılımını ve sunucu paketini seçin. Örnek:
+            <div class="mt-3 w-full rounded-md bg-base-100 p-3 font-mono text-sm">
+              [Sunucu İsmi]
+              <br>
+              [Sunucu Yazılımı]
+              <br>
+              [Sunucu Paketi]
+            </div>
+            <br>
+            Örnek bir dolduruluş:
+            <div class="mt-3 w-full rounded-md bg-base-100 p-3 font-mono text-sm">
+              Test Server
+              <br>
+              Node.JS
+              <br>
+              Mega
+            </div>
+          </span>
+        </div>
+      </div>
+      <!-- Dokümasyon(Başlangıç: Sunucu Oluşturma) bitiş satırı. (oguzh3n tarafından kodlandı.) -->
+      
+      <!-- Dokümasyon(Ücretsiz: Kredi Kazanmak) (oguzh3n tarafından kodlandı.) -->
+      <hr class="border border-gray-800 mt-3 mb-3"/>
+      <div class="mt-3">
+        <h1 class="text-3xl font-black">
+          Ücretsiz: Kredi Kazanmak
+        </h1>
+        <span class="text-md font-light">
+          Ücretsiz kredi kazanma.
+        </span>
+        <div class="mt-3">
+          <span class="text-md font-light">
+            <a href="https://discord.gg/ugu6jdquFp" class="hover:underline hover:text-white transition duration-300 text-blue-400">
+              Discord sunucumuza
+            </a>
+            katılıp takviye yaparsanız her takviye başına "6 Kredi" kazanabilirsiniz. Örneğin; 2x Takviye
+            <span class="bg-base-100 text-sm font-mono rounded p-0.5 mr-1">
+              2 x 6 = 12
+            </span>
+            gibi.
+            <br>
+            <i class="text-md font-light">
+              *(Takviye yaptıktan sonra kredileri almak için destek talebi oluşturmanız gerekli!)
+            </i>
+            <div class="mt-3">
+              <span class="text-md font-light">
+                <a href="https://discord.gg/ugu6jdquFp" class="hover:underline hover:text-white transition duration-300 text-blue-400">
+                  Discord sunucumuzda
+                </a>
+                bulunuyorsanız aynı şekilde düzenli yapılan çekilişlerden haberdar olabilirsiniz veya özel günlerde şartsız verilen kredi kodlarından yararlanabilirsiniz.
+              </span>
+            </div>
+          </span>
+        </div>
+      </div>
+      <!-- Dokümasyon(Ücretsiz: Kredi Kazanmak) bitiş satırı. (oguzh3n tarafından kodlandı.) -->
+      
+      <!-- Dokümasyon(SSS[Sık Sorulan Sorular]) (oguzh3n tarafından kodlandı.) -->
+      <div class="mt-3">
+        <hr class="border border-gray-900 mt-3 mb-3"/>
+        <h1 class="text-3xl font-black">
+          SSS
+        </h1>
+        <span class="text-md font-light">
+          Sık sorulan sorular.
+        </span>
+        <div class="mt-3">
+          <h1 class="text-lg font-semibold">
+            Nasıl kredi yüklenir?
+          </h1>
+          <span class="text-md font-light">
+            Kredi websitemiz üzerinden yüklenemez. Kredi yüklemek için manuel olarak bana ödeme yapmanız gerekir, isteğinize göre itemsatış üzerindende ödeme yapılabilir.
+            <br>
+            <i class="text-md font-light text-italic">
+              *(itemsatış vergi kestiğinden dolayı fiyatlarda vergiye oran ile yükselir.)
+            </i>
+            <br>
+            Manuel ödeme yapmak için bana ulaşabilir
+            <a href="https://discord.gg/ugu6jdquFp" class="hover:underline hover:text-white transition duration-300 text-blue-400">
+              (oguzh3n)
+            </a>
+            veya
+            <a href="https://moonhosting.xyz/ticket/new" class="hover:underline hover:text-white transition duration-300 text-blue-400">
+              destek talebi
+            </a>
+            oluşturabilirsiniz.
+          </span>
+          <br>
+          <br>
+          <h1 class="text-lg font-semibold">
+            Sponsorluk
+          </h1>
+          <span class="text-md font-light">
+            Sponsor olacağımız botlar 100 sunucudan fazla, 50 sunucudan az olamaz. Sponsor olduğumuzda size özel sunucu açılır ve ücretsiz kullanabilirsiniz.
+            <br><br>
+            Sponsor olduğumuzda botunuzun durumunda(oynuyor kısmında) veya açıklamasında websitemizin linki veya bizim adımız olmak zorunda.
+            <br><br>
+            "[prefix]sponsor" adında komut ekleyip komutun herhangi bir yerinde sitenin linki olmak zorunda.
+            <br><br>
+            Destek sunucunuzda(varsa) websitemizin linkinin paylaşılması.
+          </span>
+          <br><br>
+          <h1 class="text-lg font-semibold">
+            Teknik Sorunlar
+          </h1>
+          <span class="text-md font-light">
+            Site yeni olduğu için herhangi bir yerde herhangi bir hata oluşabilir. Bunun önüne geçmek için herhangi bir hataya rastladığınızda 
+            <a href="https://moonhosting.xyz/ticket/new" class="hover:underline hover:text-white transition duration-300 text-blue-400">
+              destek talebi
+            </a>
+            oluşturup hatayı bildirmeyi unutmayın, sizin daha iyi bir hizmet alması için hataları elimizden geldiğince düzelteceğiz.
+          </span>
+          <br><br>
+          <h1 class="text-lg font-semibold">
+            Sunucum Silinir Mi?
+          </h1>
+          <span class="text-md font-light">
+            Hesabınıza kredi yüklemezseniz krediniz bittiğinde sunucunuz askıya alınır, yeniden kredi yüklendiğinde askıdan çıkarılır. Askıya alınan sunucular "2 gün" içersinde yeniden bir yükleme yapılmazsa silinir.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dokümasyon(SSS[Sık Sorulan Sorular]) bitiş satırı. (oguzh3n tarafından kodlandı.) -->
+  
+  <!-- Footer bölümü (oguzh3n tarafından kodlandı.) -->
+  <div class="mt-20 bg-gray-900/50 backdrop-blur-md rounded-md w-full h-auto p-3 text-md font-light">
+    <h1 class="text-white text-center text-xl font-black">
+      Moon Hosting
+    </h1>
+    <div class="text-center">
+      <span class="text-sm">
+        Oguzh3n &copy; 2024 - 2025
+      </span>
+    </div>
+    <hr class="border border-gray-800 mt-3 mb-3"/>
+    <h1 class="text-white text-center text-lg font-black">
+      Legal
+    </h1> 
+    <ul class="flex-wrap gap-5 text-md font-light text-center">
+      <li class="hover:text-white hover:underline transition duration-300">
+        <a href="https://moonhosting.xyz/tos">
+          Terms of Service
+        </a>
+      </li>
+      <li class="hover:text-white hover:underline transition duration-300">
+        <a href="https://moonhosting.xyz/privacy">
+          Privacy Policy
+        </a>
+      </li>
+    </ul>
+    <hr class="border border-gray-800 mt-3 mb-3"/>
+    <h1 class="text-white text-center text-lg font-black">
+      Links
+    </h1> 
+    <ul class="flex-wrap gap-5 text-md font-light text-center">
+      <li class="hover:text-white hover:underline transition duration-300">
+        <a href="https://discord.gg/ugu6jdquFp">
+          Discord Sunucusu
+        </a>
+      </li>
+      <li class="hover:text-white hover:underline transition duration-300">
+        <a href="https://moonhosting.xyz/">
+          Kontrol Paneli
+        </a>
+      </li>
+    </ul>
+    <br>
+    <button class="w-full bg-blue-700 shadow-2xl shadow-blue-950 p-3 rounded-md hover:shadow-none hover:bg-blue-800 transition duration-300">
+      <a href="https://discord.gg/ugu6jdquFp">
+        Bize Katıl!
+      </a>
+    </button>
+  </div>
+  <!-- Footer bölümü bitiş satırı. (oguzh3n tarafından kodlandı.) -->
+  
+  <!--
+  O kadar kodu kodlayıp, hepsini detaylıca yorum satırlarına bölerek ter temiz bir kod hazırladım. Sizden ricam lütfen kendiniz yapmış gibi paylaşmayıp, footer kısmında yer alan "Oguzh3n © 2024 - 2025" kısmından herhangi bir şey değiştirmemenizdir.
+  -->
+  
+  <!--
+  Kullanılan kaynaklar; TailwindCss
+  Sürüm; v3.4.1
+  -->
+</body>
+</html>
